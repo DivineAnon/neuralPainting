@@ -1,0 +1,12 @@
+matplotlib
+sckit-image
+sckit-learn
+scipy
+numpy
+torch
+torchvision
+opencv-python
+opencv-contrib-python
+runway-python
+gdown
+pillow
