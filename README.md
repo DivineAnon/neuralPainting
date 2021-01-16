@@ -47,6 +47,7 @@ unzip checkpoints_G_watercolor_light.zip
 <p align="center">
     <img src="result_image/apple_oilpaintbrush.jpg" width="600" height="150">
 </p>
+
 progressive rendering 
 ```bash
 python demo_prog.py --img_path ./test_images/apple.jpg --canvas_color 'white' --max_m_strokes 500 --max_divide 5 --renderer oilpaintbrush --renderer_checkpoint_dir checkpoints_G_oilpaintbrush --net_G zou-fusion-net
@@ -62,6 +63,7 @@ python demo.py --img_path ./test_images/apple.jpg --canvas_color 'white' --max_m
 <p align="center">
     <img src="result_image/diamond_markerpen.jpg" width="600" height="150">
 </p>
+
 progressive rendering
 ```bash
 python demo_prog.py --img_path ./test_images/diamond.jpg --canvas_color 'black' --max_m_strokes 500 --max_divide 5 --renderer markerpen --renderer_checkpoint_dir checkpoints_G_markerpen --net_G zou-fusion-net
