@@ -45,5 +45,5 @@ unzip checkpoints_G_watercolor_light.zip
 ## to produce the result
 
 <p align="center">
-    <img src="result_image/apple_oilpaintbrush.jpg" width="600" height="300">
+    <img src="result_image/apple_oilpaintbrush.jpg" width="600" height="200">
 </p>
