@@ -45,7 +45,7 @@ unzip checkpoints_G_watercolor_light.zip
 ## to produce the result
 
 <p align="center">
-    <img src="result_image/apple_oilpaintbrush.jpg" width="600" height="200">
+    <img src="result_image/apple_oilpaintbrush.jpg" width="600" height="250">
 </p>
 progressive rendering 
 ```bash
@@ -60,7 +60,7 @@ rendering directly from mxm image grids
 python demo.py --img_path ./test_images/apple.jpg --canvas_color 'white' --max_m_strokes 500 --m_grid 5 --renderer oilpaintbrush --renderer_checkpoint_dir checkpoints_G_oilpaintbrush --net_G zou-fusion-net
 ```
 <p align="center">
-    <img src="result_image/diamond_markerpen.jpg" width="600" height="200">
+    <img src="result_image/diamond_markerpen.jpg" width="600" height="250">
 </p>
 progressive rendering
 ```bash
