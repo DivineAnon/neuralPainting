@@ -1,6 +1,6 @@
 matplotlib
-sckit-image
-sckit-learn
+scikit-image
+scikit-learn
 scipy
 numpy
 torch
