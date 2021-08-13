@@ -10,15 +10,6 @@
 ## paper
 [artistic image painting using artificial intelligence - Arfy Slowy](https://bit.ly/3AHmStJ)
 
-## setup
-
-clone repository
-
-```bash
-git clone https://github.com/slowy07/neuralPainting.git
-cd neuralPainting
-```
-
 download one of pretrained neural renderers from google drive
 
 - [oil-paint-brush](https://drive.google.com/file/d/1sqWhgBKqaBJggl2A8sD1bLSq2_B1ScMG/view)
