@@ -8,6 +8,7 @@
 [![googleColab](https://img.shields.io/badge/Demo%20image%20style%20transfer-2c3e50?style=for-the-badge&logo=jupyter&logoColor=white)](https://colab.research.google.com/drive/1gsLWqMmHcDUoQ3BmUh8gPRhkccrZs8_R?usp=sharing)
 
 ## paper
+
 [artistic image painting using artificial intelligence - Arfy Slowy](https://bit.ly/3AHmStJ)
 
 ## setup
