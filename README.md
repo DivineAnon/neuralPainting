@@ -99,3 +99,9 @@ rendering directly from mxm image grids
 ```bash
 python demo.py --img_path ./test_images/diamond.jpg --canvas_color 'black' --max_m_strokes 500 --m_grid 5 --renderer markerpen --renderer_checkpoint_dir checkpoints_G_markerpen --net_G zou-fusion-net
 ```
+
+## training details
+we train our renderer by using [adam optimizer](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/#:~:text=Adam%20is%20a%20replacement%20optimization,sparse%20gradients%20on%20noisy%20problems.). We set batch size 64, learning rate 2e-4 and beats to (0.9, 0.999). we reduce the learning rate to this 1/10 every 100 epochs and stop training after 400 epochs. in each epochs we randomly generate 50.000 x 64 ground truth strokes using a vector engine. we set rendering output size 128 x 128 pixels. we train rederers separately for each stroke type
+
+## conclusion
+We explore the nature of human painting using differentiable stroke rendering. We consider this artistic creation process under a stroke parameter searching paradigm that maximizes the similarity between the sequentially rendered canvas and the reference image. our method can be generate highly realistic and paintings artworks in vector format with controllable styles. we deal the image similarity measurement from the prespective of optimal transportation and tackle the disentanglement of color and shape with dual-pathway neural renderer. controlled experiments suggest the effectiveness of our design.
