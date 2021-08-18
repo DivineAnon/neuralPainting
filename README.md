@@ -39,7 +39,7 @@ download one of pretrained neural renderers from google drive
 ![nvdia_gtx](https://img.shields.io/badge/NVIDIA-GTX1650-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
 ![linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-i'm using training on computer with 8 core of CPU AMD ryzen 7 4800H and 16GB memory. so, i had to take into consideration computational complexity and memory limitations.
+i'm using training on computer with 8 core of CPU AMD ryzen 7 4800H and 16GB memory. so, i had to take into consideration computational complexity and memory limitations.i've tried several gpu devices with low memory, and some worked and some didn't work, you can try it and give your feedback by posting on the [issue](https://github.com/slowy07/neuralPainting/issues)
 
 ## testing
 
