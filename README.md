@@ -33,6 +33,14 @@ download one of pretrained neural renderers from google drive
 - [marker pen](https://drive.google.com/file/d/1XsjncjlSdQh2dbZ3X1qf1M8pDc8GLbNy/view?usp=sharing)
 - [color tapes](https://drive.google.com/file/d/162ykmRX8TBGVRnJIof8NeqN7cuwwuzIF/view?usp=sharing)
 
+## (my) requirement testing
+![ryzen](https://img.shields.io/badge/AMD-Ryzen_7_4800H-ED1C24?style=for-the-badge&logo=amd&logoColor=white)
+![nvdia_gtx](https://img.shields.io/badge/NVIDIA-GTX1650-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
+![linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+i'm using training on computer with 8 core of CPU AMD ryzen 7 4800H and 16GB memory. so, i had to take into consideration computational complexity and memory limitations.
+
+## testing
 ```bash
 unzip checkpoints_G_oilpaintbrush.zip
 unzip checkpoints_G_rectangle.zip
@@ -100,10 +108,34 @@ rendering directly from mxm image grids
 python demo.py --img_path ./test_images/diamond.jpg --canvas_color 'black' --max_m_strokes 500 --m_grid 5 --renderer markerpen --renderer_checkpoint_dir checkpoints_G_markerpen --net_G zou-fusion-net
 ```
 
-## training details
+## details
+**details of shading network**
+|      | Layers | Config                   |     Description |
+| :--- |    :----:   |    :----:                |             ---:|
+| C1   | Deconv + BN + ReLU | 512 x 4 x 4 / 1   | 4 x 4 x 512     | 
+| C2   | Deconv + BN + ReLU | 512 x 4 x 4 / 2   | 8 x 8 x 512     | 
+| C3   | Deconv + BN + ReLU | 256 x 4 x 4 / 2   | 16 x 16 x 256   |
+| C4   | Deconv + BN + ReLU | 128 x 4 x 4 / 2   | 32 x 32 x 128   |
+| C5   | Deconv + BN + ReLU | 64 x 4 x 4 / 2    | 64 x 64 x 64    |
+| C6   | Deconv + BN + ReLU | 3 x 4 x 4 / 2     | 128 x 128 x 3   |
 
+**rasterization network**
+|      | Layers                | Config             |     Description |
+| :--- |    :----:             |    :----:          |             ---:|
+| F1   | Full-connected + ReLU | 512                | 512             | 
+| F2   | Full-connected + ReLU | 1024               | 1024            | 
+| F3   | Full-connected + ReLU | 2048               | 2048            |
+| F4   | Full-connected + ReLU | 4096               | 3096            |
+| V1   | View                  | -                  | 16 x 16 x 16    | 
+| C1   | Conv + ReLU           | 32 x 3 x 3 / 1     | 16 x 16 x 32    |
+| C2   | Conv + Shuffle        | 32 x 3 x 3 / 2     | 32 x 32 x 8     |
+| C3   | Conv + ReLU           | 16 x 3 x 3 / 1     | 32 x 32 x 16    |
+| C4   | Conv + shuffle        | 16 x 3 x 3 / 2     | 64 x 64 x 4     |
+| C5   | Conv + ReLU           | 8 x 3 x 3 / 1      | 64 x 64 x 8     |
+| C6   | Conv + Shuffle        | 4 x 3 x 3 / 2      | 128 x 128 x1    |
+
+## training details
 we train our renderer by using [adam optimizer](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/#:~:text=Adam%20is%20a%20replacement%20optimization,sparse%20gradients%20on%20noisy%20problems.). We set batch size 64, learning rate 2e-4 and beats to (0.9, 0.999). we reduce the learning rate to this 1/10 every 100 epochs and stop training after 400 epochs. in each epochs we randomly generate 50.000 x 64 ground truth strokes using a vector engine. we set rendering output size 128 x 128 pixels. we train rederers separately for each stroke type
 
 ## conclusion
-
 We explore the nature of human painting using differentiable stroke rendering. We consider this artistic creation process under a stroke parameter searching paradigm that maximizes the similarity between the sequentially rendered canvas and the reference image. our method can be generate highly realistic and paintings artworks in vector format with controllable styles. we deal the image similarity measurement from the prespective of optimal transportation and tackle the disentanglement of color and shape with dual-pathway neural renderer. controlled experiments suggest the effectiveness of our design.
