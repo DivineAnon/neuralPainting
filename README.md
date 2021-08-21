@@ -7,12 +7,13 @@
 ![license](https://img.shields.io/apm/l/vim-mode?style=for-the-badge)
 ![pytorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white)
 ![scikitlearn](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-[![thanks](https://img.shields.io/badge/say_thanks_to_me-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://saweria.co/slowy07)
 
-## live demo
+
+## live demo and say thanks
 
 [![googleColab](https://img.shields.io/badge/Demo%20image%20to%20painting-2c3e50?style=for-the-badge&logo=jupyter&logoColor=white)](https://colab.research.google.com/drive/1N7VyYRvCUEZvK_qbiWu_YC1QCP01E9Wb#scrollTo=jt6O3GvhvK3i)
 [![googleColab](https://img.shields.io/badge/Demo%20image%20style%20transfer-2c3e50?style=for-the-badge&logo=jupyter&logoColor=white)](https://colab.research.google.com/drive/1gsLWqMmHcDUoQ3BmUh8gPRhkccrZs8_R?usp=sharing)
+[![thanks](https://img.shields.io/badge/say_thanks_to_me-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://saweria.co/slowy07)
 
 ## paper
 
