@@ -7,6 +7,7 @@
 ![license](https://img.shields.io/apm/l/vim-mode?style=for-the-badge)
 ![pytorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white)
 ![scikitlearn](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+[![thanks](https://img.shields.io/badge/say_thanks_to_me-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://saweria.co/slowy07)
 
 ## live demo
 
