@@ -8,7 +8,6 @@
 ![pytorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white)
 ![scikitlearn](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
-
 ## live demo and say thanks
 
 [![googleColab](https://img.shields.io/badge/Demo%20image%20to%20painting-2c3e50?style=for-the-badge&logo=jupyter&logoColor=white)](https://colab.research.google.com/drive/1N7VyYRvCUEZvK_qbiWu_YC1QCP01E9Wb#scrollTo=jt6O3GvhvK3i)
