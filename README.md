@@ -110,10 +110,13 @@ rendering directly from mxm image grids
 python demo.py --img_path ./test_images/diamond.jpg --canvas_color 'black' --max_m_strokes 500 --m_grid 5 --renderer markerpen --renderer_checkpoint_dir checkpoints_G_markerpen --net_G zou-fusion-net
 ```
 
+## network architecture
+We build our shading network similiar to [Deep Convolutional Generative Adversarial Network](https://www.tensorflow.org/tutorials/generative/dcgan) (DCGAN), which consist of six transposed conv layers. We remote Tanh activation from the output layer and observe a better convergence. In from the output layer and observe a better convergence.
+
 ## details configurations of neural renderer
 
 **details of shading network**
-| | Layers | Config | Description |
+| | Layers | Config | Out size |
 | :--- | :----: | :----: | ---:|
 | C1 | Deconv + BN + ReLU | 512 x 4 x 4 / 1 | 4 x 4 x 512 |
 | C2 | Deconv + BN + ReLU | 512 x 4 x 4 / 2 | 8 x 8 x 512 |
@@ -123,7 +126,7 @@ python demo.py --img_path ./test_images/diamond.jpg --canvas_color 'black' --max
 | C6 | Deconv + BN + ReLU | 3 x 4 x 4 / 2 | 128 x 128 x 3 |
 
 **rasterization network**
-| | Layers | Config | Description |
+| | Layers | Config | Out size |
 | :--- | :----: | :----: | ---:|
 | F1 | Full-connected + ReLU | 512 | 512 |
 | F2 | Full-connected + ReLU | 1024 | 1024 |
@@ -138,7 +141,6 @@ python demo.py --img_path ./test_images/diamond.jpg --canvas_color 'black' --max
 | C6 | Conv + Shuffle | 4 x 3 x 3 / 2 | 128 x 128 x1 |
 
 ## high resolution result
-
 since our painting result are generated with a vector format, we can render them at any resolutions. we show group rendered on high resolution
 
 ![hig_resolution_photo](result_image/high_resolution.png)
@@ -150,14 +152,12 @@ a high resolution neural style transfer result of our method (picasso style tran
 we train our renderer by using [adam optimizer](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/#:~:text=Adam%20is%20a%20replacement%20optimization,sparse%20gradients%20on%20noisy%20problems.). We set batch size 64, learning rate 2e-4 and beats to (0.9, 0.999). we reduce the learning rate to this 1/10 every 100 epochs and stop training after 400 epochs. in each epochs we randomly generate 50.000 x 64 ground truth strokes using a vector engine. we set rendering output size 128 x 128 pixels. we train rederers separately for each stroke type
 
 ## compare with other neural renderers
-
 ### rasterization network and shading artwork
-
 | Renderer / stroke             | oil paint | watercolor |
-| :---------------------------- | :-------: | ---------: |
-| our (rasterization only)      |  24.015   |     25.769 |
-| our (shading only)            |  26.048   |     29.045 |
-| our (rasterization + shading) |  26.982   |     31.389 |
+|:---                           | :----:    |        ---:|
+| our (rasterization only)      | 24.015    | 25.769     |
+| our (shading only)            | 26.048    | 29.045     |
+| our (rasterization + shading) | 26.982    | 31.389     |
 
 ## conclusion
 
