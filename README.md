@@ -20,7 +20,7 @@
 
 ## how use my photos
 
-you can save at `style_images` or create custom path
+you can save at [`style_images`](./style_images) (example image on this folder) or create custom path
 
 image on demo
 
