@@ -81,7 +81,7 @@ def optimize_painter(pt, args, output_style):
     pt.x_ctt.requires_grad = True
     pt.x_color.requires_grad = True
     pt.x_alpha.requires_grad = True
-    utils.aset_requires_grad(pt.net_G, True)
+    utils.aset_requires_grad(pt.net_G, False)
     
     pt.optimizer_x = optim.RMSprop([pt.x_ctt, pt.x_color, pt.x_alpha], lr=pt.lr)
 
